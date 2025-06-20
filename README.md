@@ -25,3 +25,15 @@ python analyze_pdf.py --pdf path/to/file.pdf \
 ```
 
 The script will save JPG files in the `output_images` directory, analyze each page, and append the images and their descriptions to the specified Google Doc.
+
+## Web Interface
+
+A simple Flask application is provided to upload a PDF and required information via a web page.
+
+Run the server:
+
+```bash
+python web_app.py
+```
+
+Open `http://localhost:8000` in your browser and fill out the form with the PDF file, Google service account JSON, Google Doc ID, OpenAI API key, and optional prompt. Each page will be processed and appended to the specified document.
