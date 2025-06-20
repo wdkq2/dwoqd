@@ -46,9 +46,11 @@ Some environments may not provide `serve_kernel_port`, so check for it first:
 ```python
 from google.colab import output
 if hasattr(output, "serve_kernel_port"):
-    output.serve_kernel_port(8000)
+    url = output.serve_kernel_port(8000)
+    print(f"Open the web interface at: {url}")
 
-!python web_app.py
+       url = output.serve_kernel_port(8000)
+       print(f"Open the web interface at: {url}")
 ```
 
 This will provide a link in the cell output that opens the web interface.
