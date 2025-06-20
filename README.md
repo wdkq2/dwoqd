@@ -47,6 +47,7 @@ Some environments may not provide `serve_kernel_port`, so check for it first:
 from google.colab import output
 if hasattr(output, "serve_kernel_port"):
     output.serve_kernel_port(8000)
+
 !python web_app.py
 ```
 
@@ -69,6 +70,7 @@ This will provide a link in the cell output that opens the web interface.
    from google.colab import output
    if hasattr(output, "serve_kernel_port"):
        output.serve_kernel_port(8000)
+
    !python web_app.py
    ```
 
