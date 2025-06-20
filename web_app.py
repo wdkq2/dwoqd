@@ -145,5 +145,15 @@ def save(item_id):
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8000)
+    # Running inside Google Colab requires a special handler to expose the
+    # Flask app. When `google.colab` is available we use
+    # `output.serve_kernel_port` so users can access the web UI via a link.
+    try:
+        from google.colab import output  # type: ignore
+        output.serve_kernel_port(
+            8000, lambda: app.run(host='0.0.0.0', port=8000)
+        )
+    except Exception:
+        # Fall back to the normal Flask dev server when not in Colab.
+        app.run(host='0.0.0.0', port=8000)
 
