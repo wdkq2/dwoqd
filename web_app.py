@@ -145,8 +145,15 @@ def save(item_id):
 
 
 if __name__ == '__main__':
-    # The Flask server runs on port 8000. When using Google Colab you must
-    # expose the port separately in a notebook cell using
-    # `google.colab.output.serve_kernel_port(8000)` before running this script.
+    # The Flask server runs on port 8000. When executed in Google Colab,
+    # `serve_kernel_port` is used automatically to expose the URL.
+    try:
+        from google.colab import output
+        if hasattr(output, "serve_kernel_port"):
+            url = output.serve_kernel_port(8000)
+            print(f"Open the web interface at: {url}")
+    except Exception:
+        pass
+
     app.run(host="0.0.0.0", port=8000)
 

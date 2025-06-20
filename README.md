@@ -40,21 +40,17 @@ Open `http://localhost:8000` in your browser and fill out the form with the PDF 
 
 ### Running in Google Colab
 
-In Google Colab you must expose the Flask server using `google.colab.output`
-before starting it. Some environments may not provide `serve_kernel_port`, so
-check for it first:
+`web_app.py` automatically exposes the Flask server using
+`google.colab.output.serve_kernel_port` when available. Simply run the script
+and look for the printed URL. If `serve_kernel_port` is not provided in your
+environment, you may need to expose port 8000 manually.
 
-```python
-from google.colab import output
-if hasattr(output, "serve_kernel_port"):
-    url = output.serve_kernel_port(8000)
-    print(f"Open the web interface at: {url}")
-!python web_app.py
+```bash
+python web_app.py
 ```
 
-This will provide a link in the cell output that opens the web interface.
-The Flask app itself does not call `serve_kernel_port`, so make sure to run
-these commands first when using Colab.
+The script prints something like `Open the web interface at: <url>` when run in
+Colab. Open that link to access the web app.
 
 ### Google Colab에서 자세히 실행하기
 
@@ -67,18 +63,14 @@ these commands first when using Colab.
    !apt-get -y install poppler-utils
    ```
 
-2. 다음 코드를 실행해 Flask 서버를 노트북 외부에서 접근할 수 있도록 노출합니다. 일부 환경에서는 `serve_kernel_port`가 없을 수 있으므로 조건을 확인합니다.
+2. `web_app.py`를 실행합니다. `serve_kernel_port`가 지원되는 환경이라면
+   스크립트가 자동으로 포트를 노출하고 URL을 출력합니다.
 
-   ```python
-   from google.colab import output
-   if hasattr(output, "serve_kernel_port"):
-       url = output.serve_kernel_port(8000)
-       print(f"Open the web interface at: {url}")
+   ```bash
    !python web_app.py
    ```
 
-   웹 앱은 자동으로 `serve_kernel_port`를 호출하지 않으므로, 링크를 받으려면
-   위 코드를 먼저 실행해야 합니다.
+   셀 출력에 표시되는 링크를 클릭하면 웹 인터페이스로 이동합니다.
 
 3. 셀 출력에 나타나는 링크를 클릭하면 웹 인터페이스가 열립니다. 여기서 PDF 파일,
    Google 서비스 계정 JSON, OpenAI API 키, 프롬프트를 한 번에 입력하면 됩니다.
