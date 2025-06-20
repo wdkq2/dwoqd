@@ -74,6 +74,12 @@ def append_image_and_text(service, doc_id, image_path, text):
     service.documents().batchUpdate(documentId=doc_id, body={'requests': requests}).execute()
 
 
+def create_document(service, title):
+    """Create a new Google Doc and return its document ID."""
+    doc = service.documents().create(body={'title': title}).execute()
+    return doc.get('documentId')
+
+
 def main():
     parser = argparse.ArgumentParser(description='Analyze PDF pages with OpenAI and save results to Google Docs.')
     parser.add_argument('--pdf', required=True, help='Input PDF file')

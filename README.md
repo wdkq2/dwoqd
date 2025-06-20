@@ -28,7 +28,7 @@ The script will save JPG files in the `output_images` directory, analyze each pa
 
 ## Web Interface
 
-A simple Flask application is provided to upload a PDF and required information via a web page.
+The repository includes a Flask application that lets you upload a PDF and analyze it in the browser. Processed PDFs are stored in a history page so you can review the results and decide when to save them.
 
 Run the server:
 
@@ -36,4 +36,4 @@ Run the server:
 python web_app.py
 ```
 
-Open `http://localhost:8000` in your browser and fill out the form with the PDF file, Google service account JSON, Google Doc ID, OpenAI API key, and optional prompt. Each page will be processed and appended to the specified document.
+Open `http://localhost:8000` in your browser and fill out the form with the PDF file, Google service account JSON, OpenAI API key, and optional prompt. After processing, visit the **History** page to see the results. From there you can choose a document title and save the images and descriptions to a new Google Doc whenever you need.
