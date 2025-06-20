@@ -52,6 +52,7 @@ python web_app.py
 The script prints something like `Open the web interface at: <url>` when run in
 Colab. Open that link to access the web app.
 
+
 ### Google Colab에서 자세히 실행하기
 
 1. 새 Colab 노트북에서 저장소를 가져오고 필요한 패키지를 설치합니다.
@@ -71,6 +72,7 @@ Colab. Open that link to access the web app.
    ```
 
    셀 출력에 표시되는 링크를 클릭하면 웹 인터페이스로 이동합니다.
+
 
 3. 셀 출력에 나타나는 링크를 클릭하면 웹 인터페이스가 열립니다. 여기서 PDF 파일,
    Google 서비스 계정 JSON, OpenAI API 키, 프롬프트를 한 번에 입력하면 됩니다.
