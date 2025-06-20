@@ -73,3 +73,4 @@ This will provide a link in the cell output that opens the web interface.
    Google 서비스 계정 JSON, OpenAI API 키, 프롬프트를 한 번에 입력하면 됩니다.
    분석이 끝나면 **History** 페이지에서 결과를 확인하고 원하는 시점에
    Google Docs로 저장할 수 있습니다.
+
