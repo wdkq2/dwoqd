@@ -40,11 +40,14 @@ Open `http://localhost:8000` in your browser and fill out the form with the PDF 
 
 ### Running in Google Colab
 
-In Google Colab you can expose the Flask server using `google.colab.output`:
+In Google Colab you can expose the Flask server using `google.colab.output`.
+Some environments may not provide `serve_kernel_port`, so check for it first:
 
 ```python
 from google.colab import output
-output.serve_kernel_port(8000)
+if hasattr(output, "serve_kernel_port"):
+    output.serve_kernel_port(8000)
+
 !python web_app.py
 ```
 
@@ -61,11 +64,13 @@ This will provide a link in the cell output that opens the web interface.
    !apt-get -y install poppler-utils
    ```
 
-2. 다음 코드를 실행해 Flask 서버를 노트북 외부에서 접근할 수 있도록 노출합니다.
+2. 다음 코드를 실행해 Flask 서버를 노트북 외부에서 접근할 수 있도록 노출합니다. 일부 환경에서는 `serve_kernel_port`가 없을 수 있으므로 조건을 확인합니다.
 
    ```python
    from google.colab import output
-   output.serve_kernel_port(8000)
+   if hasattr(output, "serve_kernel_port"):
+       output.serve_kernel_port(8000)
+
    !python web_app.py
    ```
 
@@ -73,4 +78,3 @@ This will provide a link in the cell output that opens the web interface.
    Google 서비스 계정 JSON, OpenAI API 키, 프롬프트를 한 번에 입력하면 됩니다.
    분석이 끝나면 **History** 페이지에서 결과를 확인하고 원하는 시점에
    Google Docs로 저장할 수 있습니다.
-
