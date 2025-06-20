@@ -48,6 +48,7 @@ from google.colab import output
 if hasattr(output, "serve_kernel_port"):
     url = output.serve_kernel_port(8000)
     print(f"Open the web interface at: {url}")
+
 !python web_app.py
 ```
 
@@ -71,10 +72,10 @@ This will provide a link in the cell output that opens the web interface.
    if hasattr(output, "serve_kernel_port"):
        url = output.serve_kernel_port(8000)
        print(f"Open the web interface at: {url}")
+
    !python web_app.py
    ```
 
 3. 셀 출력에 나타나는 링크를 클릭하면 웹 인터페이스가 열립니다. 여기서 PDF 파일,
    Google 서비스 계정 JSON, OpenAI API 키, 프롬프트를 한 번에 입력하면 됩니다.
    분석이 끝나면 **History** 페이지에서 결과를 확인하고 원하는 시점에
-   Google Docs로 저장할 수 있습니다.

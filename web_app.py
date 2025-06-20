@@ -155,10 +155,10 @@ if __name__ == '__main__':
                 8000, lambda: app.run(host="0.0.0.0", port=8000)
             )
             print(f"Access the web UI at: {url}", flush=True)
+
         else:
             # If the attribute is missing just run the server normally.
             app.run(host="0.0.0.0", port=8000)
     except Exception:
         # Fall back to the normal Flask dev server when not in Colab.
         app.run(host="0.0.0.0", port=8000)
-
