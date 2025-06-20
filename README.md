@@ -49,12 +49,14 @@ from google.colab import output
 if hasattr(output, "serve_kernel_port"):
     url = output.serve_kernel_port(8000)
     print(f"Open the web interface at: {url}")
+
 !python web_app.py
 ```
 
 This will provide a link in the cell output that opens the web interface.
 The Flask app itself does not call `serve_kernel_port`, so make sure to run
 these commands first when using Colab.
+
 
 ### Google Colab에서 자세히 실행하기
 
@@ -84,3 +86,4 @@ these commands first when using Colab.
    Google 서비스 계정 JSON, OpenAI API 키, 프롬프트를 한 번에 입력하면 됩니다.
    분석이 끝나면 **History** 페이지에서 결과를 확인하고 원하는 시점에
    Google Docs로 저장할 수 있습니다.
+
