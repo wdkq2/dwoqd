@@ -72,9 +72,9 @@ Colab. Open that link to access the web app.
    ```bash
    !python web_app.py
    ```
-
    셀은 계속 실행 중이므로, 새로운 셀을 열어 아래 코드를 실행하여 링크를
    얻을 수 있습니다.
+
 
    ```python
    from google.colab import output
