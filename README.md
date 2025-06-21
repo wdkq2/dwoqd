@@ -40,19 +40,15 @@ Open `http://localhost:8000` in your browser and fill out the form with the PDF 
 
 ### Running in Google Colab
 
-`web_app.py` automatically exposes the Flask server using
-`google.colab.output.serve_kernel_port` when available. Simply run the script
-and look for the printed URL. If `serve_kernel_port` is not provided in your
-environment, you may need to expose port 8000 manually.
-
-```bash
-python web_app.py
-```
+`web_app.py` automatically exposes the Flask server in Google Colab. It first
+tries `google.colab.output.serve_kernel_port`, falling back to
+`google.colab.kernel.proxyPort` if needed. When you run the script, it prints a
+link such as `Open the web interface at: <url>`. Click that link to access the
+web app. If no link appears, your environment may not support these helpers and
+you will need to manually expose port 8000.
 
 The script prints something like `Open the web interface at: <url>` when run in
 Colab. Open that link to access the web app.
-
-
 ### Google Colab에서 자세히 실행하기
 
 1. 새 Colab 노트북에서 저장소를 가져오고 필요한 패키지를 설치합니다.
@@ -64,14 +60,22 @@ Colab. Open that link to access the web app.
    !apt-get -y install poppler-utils
    ```
 
-2. `web_app.py`를 실행합니다. `serve_kernel_port`가 지원되는 환경이라면
-   스크립트가 자동으로 포트를 노출하고 URL을 출력합니다.
+2. `web_app.py`를 실행합니다. 스크립트가 자동으로 포트를 노출하고 URL을
+   출력합니다. 지원되지 않는 경우에는 아래 예시처럼 수동으로 포트를
+   노출한 뒤 표시되는 링크를 사용합니다.
 
    ```bash
    !python web_app.py
    ```
+   셀 출력에 링크가 보이지 않는다면 아래 코드를 실행하여 링크를 얻을 수
+   있습니다.
 
-   셀 출력에 표시되는 링크를 클릭하면 웹 인터페이스로 이동합니다.
+   ```python
+   from google.colab import output
+   output.eval_js("google.colab.kernel.proxyPort(8000)")
+   ```
+
+   표시되는 링크를 클릭하면 웹 인터페이스로 이동합니다.
 
 
 3. 셀 출력에 나타나는 링크를 클릭하면 웹 인터페이스가 열립니다. 여기서 PDF 파일,
