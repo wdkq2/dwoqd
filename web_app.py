@@ -150,7 +150,7 @@ if __name__ == '__main__':
     # provide `serve_kernel_port`, so we fall back to `kernel.proxyPort`.
     url = None
 
-    try:
+        print(f"Open the web interface at: {url}", flush=True)
         from google.colab import output
         if hasattr(output, "serve_kernel_port"):
             url = output.serve_kernel_port(8000)

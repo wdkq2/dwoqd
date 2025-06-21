@@ -67,8 +67,8 @@ Colab. Open that link to access the web app.
    ```bash
    !python web_app.py
    ```
-   셀 출력에 링크가 보이지 않는다면 아래 코드를 실행하여 링크를 얻을 수
-   있습니다.
+   셀은 계속 실행 중이므로, 새로운 셀을 열어 아래 코드를 실행하여 링크를
+   얻을 수 있습니다.
 
    ```python
    from google.colab import output
