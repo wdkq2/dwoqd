@@ -47,8 +47,13 @@ link such as `Open the web interface at: <url>`. Click that link to access the
 web app. If no link appears, your environment may not support these helpers and
 you will need to manually expose port 8000.
 
+```bash
+python web_app.py
+```
+
 The script prints something like `Open the web interface at: <url>` when run in
 Colab. Open that link to access the web app.
+
 ### Google Colab에서 자세히 실행하기
 
 1. 새 Colab 노트북에서 저장소를 가져오고 필요한 패키지를 설치합니다.
@@ -67,8 +72,9 @@ Colab. Open that link to access the web app.
    ```bash
    !python web_app.py
    ```
-   셀 출력에 링크가 보이지 않는다면 아래 코드를 실행하여 링크를 얻을 수
-   있습니다.
+   셀은 계속 실행 중이므로, 새로운 셀을 열어 아래 코드를 실행하여 링크를
+   얻을 수 있습니다.
+
 
    ```python
    from google.colab import output
@@ -76,7 +82,6 @@ Colab. Open that link to access the web app.
    ```
 
    표시되는 링크를 클릭하면 웹 인터페이스로 이동합니다.
-
 
 3. 셀 출력에 나타나는 링크를 클릭하면 웹 인터페이스가 열립니다. 여기서 PDF 파일,
    Google 서비스 계정 JSON, OpenAI API 키, 프롬프트를 한 번에 입력하면 됩니다.
