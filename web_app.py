@@ -149,6 +149,7 @@ if __name__ == '__main__':
     # we try to expose the URL automatically. Older Colab versions may not
     # provide `serve_kernel_port`, so we fall back to `kernel.proxyPort`.
     url = None
+
     try:
         from google.colab import output
         if hasattr(output, "serve_kernel_port"):
@@ -162,4 +163,3 @@ if __name__ == '__main__':
         print(f"Open the web interface at: {url}")
 
     app.run(host="0.0.0.0", port=8000)
-
